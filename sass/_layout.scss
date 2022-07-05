@@ -1,0 +1,40 @@
+.container {
+    max-width: 1140;
+
+    display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: 8rem minmax(4rem, 1fr) repeat(8, minmax(min-content, 14.25rem)) minmax(4rem, 1fr);
+    grid-template-areas: "side head head head head head head head real real real"
+                            "side . feat feat feat feat feat feat feat feat ."
+                            "side pic pic pic pic pic cont cont cont cont cont"
+                            "side . home home home home home home home home ."
+                            "side gall gall gall gall gall gall gall gall gall gall"
+                            "side foot foot foot foot foot foot foot foot foot foot";
+
+
+    @media only screen and (max-width: $bp-large) {
+        grid-template-rows: 7rem 80vh;
+        grid-template-columns: minmax(4rem, 1fr) repeat(8, minmax(min-content, 14.25rem)) minmax(4rem, 1fr);
+        grid-template-areas: "side side side side side side side side side side"
+                            "head head head head head head head real real real"
+                                ". feat feat feat feat feat feat feat feat ."
+                                "pic pic pic pic pic cont cont cont cont cont"
+                                ". home home home home home home home home ."
+                            "gall gall gall gall gall gall gall gall gall gall"
+                            "foot foot foot foot foot foot foot foot foot foot";
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            grid-template-rows: 7rem 80vh;
+            grid-template-columns: minmax(4rem, 1fr) repeat(8, minmax(min-content, 14.25rem)) minmax(4rem, 1fr);
+            grid-template-areas: "side side side side side side side side side side"
+                                "head head head head head head head head head head"
+                                "real real real real real real real real real real "
+                                    ". feat feat feat feat feat feat feat feat ."
+                                    "cont cont cont cont cont cont cont cont cont cont"
+                                    "pic pic pic pic pic pic pic pic pic pic"
+                                    ". home home home home home home home home ."
+                                "gall gall gall gall gall gall gall gall gall gall"
+                                "foot foot foot foot foot foot foot foot foot foot";
+            }
+}

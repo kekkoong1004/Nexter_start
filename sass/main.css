@@ -3,21 +3,18 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 62.5%;
 }
 @media only screen and (max-width: 75em) {
   html {
     font-size: 50%;
-  }
-}
-@media only screen and (max-width: 37.5em) {
-  html {
-    font-size: 37.5%;
   }
 }
 
@@ -75,6 +72,7 @@ body > * {
   border-radius: 0;
   padding: 1.8rem 3rem;
   cursor: pointer;
+  -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 .btn:hover {
@@ -113,10 +111,12 @@ body > * {
   display: block;
 }
 .nav__btn::before {
-  transform: translateY(-1.5rem);
+  -webkit-transform: translateY(-1.5rem);
+          transform: translateY(-1.5rem);
 }
 .nav__btn::after {
-  transform: translateY(1.3rem);
+  -webkit-transform: translateY(1.3rem);
+          transform: translateY(1.3rem);
 }
 @media only screen and (max-width: 62.5em) {
   .nav__btn {
@@ -130,40 +130,53 @@ body > * {
     height: 1.7px;
   }
   .nav__btn::before {
-    transform: translateY(-1.3rem);
+    -webkit-transform: translateY(-1.3rem);
+            transform: translateY(-1.3rem);
   }
   .nav__btn::after {
-    transform: translateY(1.1rem);
+    -webkit-transform: translateY(1.1rem);
+            transform: translateY(1.1rem);
   }
 }
 
 .header {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 29, 44, 0.7)), to(rgba(16, 29, 44, 0.7))), url(../img/hero.jpeg);
   background-image: linear-gradient(rgba(16, 29, 44, 0.7), rgba(16, 29, 44, 0.7)), url(../img/hero.jpeg);
   background-position: center;
   background-size: cover;
   grid-area: head;
   padding: 3.5rem;
   display: grid;
+  grid-template-rows: 1fr 3rem minmax(5rem, -webkit-min-content) 1fr -webkit-min-content 1fr;
   grid-template-rows: 1fr 3rem minmax(5rem, min-content) 1fr min-content 1fr;
+  grid-template-columns: minmax(-webkit-min-content, -webkit-max-content);
   grid-template-columns: minmax(min-content, max-content);
   row-gap: 1.5rem;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .header__logo {
   height: 2.8rem;
   justify-self: center;
 }
 .header__btn {
-  align-self: start;
+  -ms-flex-item-align: start;
+      align-self: start;
   justify-self: start;
 }
 .header__seenon {
   font-size: 1.5rem;
   color: #aaa;
   display: grid;
+  grid-template-columns: 1fr -webkit-max-content 1fr;
   grid-template-columns: 1fr max-content 1fr;
-  align-items: center;
-  column-gap: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1.5rem;
+     -moz-column-gap: 1.5rem;
+          column-gap: 1.5rem;
 }
 .header__seenon::before, .header__seenon::after {
   content: "";
@@ -175,12 +188,15 @@ body > * {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .header__seenon-logos img {
   max-height: 2.5rem;
   max-width: 100%;
-  filter: brightness(70%);
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
 }
 
 .realtors {
@@ -188,8 +204,11 @@ body > * {
   grid-area: real;
   padding: 4.5rem;
   display: grid;
-  align-content: center;
-  justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .realtors__title {
   text-align: center;
@@ -198,18 +217,25 @@ body > * {
 }
 .realtors__top-3 {
   display: grid;
+  grid-template-columns: -webkit-min-content -webkit-max-content;
   grid-template-columns: min-content max-content;
-  align-items: center;
-  column-gap: 3.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 3.5rem;
+     -moz-column-gap: 3.5rem;
+          column-gap: 3.5rem;
   row-gap: 4rem;
 }
 @media only screen and (max-width: 50em) {
   .realtors__top-3 {
+    grid-template-columns: repeat(3, -webkit-min-content -webkit-max-content);
     grid-template-columns: repeat(3, min-content max-content);
   }
 }
 @media only screen and (max-width: 37.5em) {
   .realtors__top-3 {
+    grid-template-columns: -webkit-min-content -webkit-max-content;
     grid-template-columns: min-content max-content;
   }
 }
@@ -234,7 +260,9 @@ body > * {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 5.5rem;
-  align-items: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
 @media only screen and (max-width: 37.5em) {
   .features {
@@ -244,16 +272,20 @@ body > * {
 
 .feature {
   display: grid;
+  grid-template-columns: -webkit-min-content 1fr;
   grid-template-columns: min-content 1fr;
   row-gap: 1.5rem;
-  column-gap: 2.5rem;
+  -webkit-column-gap: 2.5rem;
+     -moz-column-gap: 2.5rem;
+          column-gap: 2.5rem;
 }
 .feature__icon {
   fill: #c69963;
   width: 4.5rem;
   height: 4.5rem;
   grid-row: 1/span 2;
-  transform: translateY(-1rem);
+  -webkit-transform: translateY(-1rem);
+          transform: translateY(-1rem);
 }
 .feature__text {
   font-size: 1.7rem;
@@ -262,6 +294,7 @@ body > * {
 
 .story__picture {
   background-color: #aaa;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(198, 153, 99, 0.5)), to(rgba(198, 153, 99, 0.5))), url(../img/back.jpg);
   background-image: linear-gradient(rgba(198, 153, 99, 0.5), rgba(198, 153, 99, 0.5)), url(../img/back.jpg);
   background-position: center;
   background-size: cover;
@@ -292,7 +325,8 @@ body > * {
   grid-row: 4/6;
   grid-column: 4/7;
   z-index: 2;
-  box-shadow: 2rem 1rem 6rem 2rem rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 2rem 1rem 6rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 2rem 1rem 6rem 2rem rgba(0, 0, 0, 0.2);
 }
 @media only screen and (max-width: 50em) {
   .story__img--2 {
@@ -306,7 +340,9 @@ body > * {
   grid-area: cont;
   padding: 4vh 6vw;
   display: grid;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items: start;
 }
 .story__text {
@@ -362,15 +398,22 @@ body > * {
   text-align: center;
   color: white;
   padding: 1.5rem;
-  transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
 }
 .home__location, .home__rooms {
   margin-top: 2.5rem;
 }
 .home__location, .home__rooms, .home__area, .home__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .home__location svg, .home__rooms svg, .home__area svg, .home__price svg {
   width: 2rem;
@@ -389,13 +432,16 @@ body > * {
 .container {
   max-width: 1140;
   display: grid;
+  grid-template-rows: 80vh -webkit-min-content 40vw repeat(3, -webkit-min-content);
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns: 8rem minmax(4rem, 1fr) repeat(8, minmax(-webkit-min-content, 14.25rem)) minmax(4rem, 1fr);
   grid-template-columns: 8rem minmax(4rem, 1fr) repeat(8, minmax(min-content, 14.25rem)) minmax(4rem, 1fr);
   grid-template-areas: "side head head head head head head head real real real" "side . feat feat feat feat feat feat feat feat ." "side pic pic pic pic pic cont cont cont cont cont" "side . home home home home home home home home ." "side gall gall gall gall gall gall gall gall gall gall" "side foot foot foot foot foot foot foot foot foot foot";
 }
 @media only screen and (max-width: 62.5rem) {
   .container {
     grid-template-rows: 7rem 80vh;
+    grid-template-columns: minmax(4rem, 1fr) repeat(8, minmax(-webkit-min-content, 14.25rem)) minmax(4rem, 1fr);
     grid-template-columns: minmax(4rem, 1fr) repeat(8, minmax(min-content, 14.25rem)) minmax(4rem, 1fr);
     grid-template-areas: "side side side side side side side side side side" "head head head head head head head real real real" ". feat feat feat feat feat feat feat feat ." "pic pic pic pic pic cont cont cont cont cont" ". home home home home home home home home ." "gall gall gall gall gall gall gall gall gall gall" "foot foot foot foot foot foot foot foot foot foot";
   }
@@ -403,6 +449,7 @@ body > * {
 @media only screen and (max-width: 50em) {
   .container {
     grid-template-rows: 7rem 80vh;
+    grid-template-columns: minmax(4rem, 1fr) repeat(8, minmax(-webkit-min-content, 14.25rem)) minmax(4rem, 1fr);
     grid-template-columns: minmax(4rem, 1fr) repeat(8, minmax(min-content, 14.25rem)) minmax(4rem, 1fr);
     grid-template-areas: "side side side side side side side side side side" "head head head head head head head head head head" "real real real real real real real real real real " ". feat feat feat feat feat feat feat feat ." "cont cont cont cont cont cont cont cont cont cont" "pic pic pic pic pic pic pic pic pic pic" ". home home home home home home home home ." "gall gall gall gall gall gall gall gall gall gall" "foot foot foot foot foot foot foot foot foot foot";
   }
@@ -477,7 +524,8 @@ body > * {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .footer {
@@ -489,7 +537,9 @@ body > * {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 3rem;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .footer__item {
   list-style: none;
@@ -504,11 +554,13 @@ body > * {
   text-align: center;
   display: block;
   padding: 1.5rem;
+  -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 .footer__link:hover, .footer__link:active {
   background-color: rgba(255, 255, 255, 0.05);
-  transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 .footer__text {
   font-family: "Josefin Sans", sans-serif;
